@@ -36918,7 +36918,7 @@ F.nE.prototype={
 aK:function(){return new F.zd(C.q)}}
 F.zd.prototype={
 L:function(a){var t=null,s=C.D.h(0,900),r=L.oO("Web Demo",t),q=C.D.h(0,850),p=u.E
-return new M.on(new E.lR(r,0,q,!0,new P.a0(1/0,56),t),new T.h6(new V.aK(30,40,30,0),T.Xg(H.b([new K.ry(new L.lT("assets/me.jpg"),40,t),new T.cT(t,30,t,t),L.oO("NAME",A.hn(t,t,C.vc,t,t,t,t,t,t,t,t,t,t,t,t,t,!0,2,t,t,t,t,t)),new T.cT(t,10,t,t),L.oO("Victor Zamora",A.hn(t,t,C.v1.h(0,200),t,t,t,t,t,t,t,t,28,t,C.bp,t,t,!0,2,t,t,t,t,t)),new T.cT(t,30,t,t),T.Z_(H.b([L.Ss(C.te,C.D.h(0,400)),new T.cT(10,t,t,t),L.oO("viczammer@gmail.com",A.hn(t,t,C.D.h(0,400),t,t,t,t,t,t,t,t,18,t,t,t,t,!0,1,t,t,t,t,t))],p),C.n4,C.kQ),new T.cT(t,30,t,t),L.oO("Mira pater, una pagina web hecha con flutter",A.hn(t,t,C.D.h(0,300),t,t,t,t,t,t,t,t,18,t,C.bp,t,t,!0,2,t,t,t,t,t))],p),C.hk,C.kP),t),s,t)}};(function aliases(){var t=H.A1.prototype
+return new M.on(new E.lR(r,0,q,!0,new P.a0(1/0,56),t),new T.h6(new V.aK(30,40,30,0),T.Xg(H.b([new K.ry(new L.lT("assets/me.jpg"),40,t),new T.cT(t,30,t,t),L.oO("NAME",A.hn(t,t,C.vc,t,t,t,t,t,t,t,t,t,t,t,t,t,!0,2,t,t,t,t,t)),new T.cT(t,10,t,t),L.oO("Victor Zamora",A.hn(t,t,C.v1.h(0,200),t,t,t,t,t,t,t,t,28,t,C.bp,t,t,!0,2,t,t,t,t,t)),new T.cT(t,30,t,t),T.Z_(H.b([L.Ss(C.te,C.D.h(0,400)),new T.cT(10,t,t,t),L.oO("viczammer@gmail.com",A.hn(t,t,C.D.h(0,400),t,t,t,t,t,t,t,t,18,t,t,t,t,!0,1,t,t,t,t,t))],p),C.n4,C.kQ),new T.cT(t,30,t,t),L.oO("Look, it is a website done with flutter",A.hn(t,t,C.D.h(0,300),t,t,t,t,t,t,t,t,18,t,C.bp,t,t,!0,2,t,t,t,t,t))],p),C.hk,C.kP),t),s,t)}};(function aliases(){var t=H.A1.prototype
 t.zw=t.Y
 t.zA=t.bp
 t.zz=t.bl
