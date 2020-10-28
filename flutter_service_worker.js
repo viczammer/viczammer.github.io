@@ -1,118 +1,183 @@
 'use strict';
+const MANIFEST = 'flutter-app-manifest';
+const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  ".git/COMMIT_EDITMSG": "bb8fa3f2826856eb9bd3f72bed64c2db",
-".git/config": "56ed83fa8e65ee8545876828ddef3abe",
-".git/description": "a0a7c3fff21f2aea3cfa1d0316dd816c",
-".git/HEAD": "4cf2d64e44205fe628ddd534e1151b58",
-".git/hooks/applypatch-msg.sample": "ce562e08d8098926a3862fc6e7905199",
-".git/hooks/commit-msg.sample": "579a3c1e12a1e74a98169175fb913012",
-".git/hooks/fsmonitor-watchman.sample": "6c86e8d8c61b7e422eb063617a4ed910",
-".git/hooks/post-update.sample": "2b7ea5cee3c49ff53d41e00785eb974c",
-".git/hooks/pre-applypatch.sample": "054f9ffb8bfe04a599751cc757226dda",
-".git/hooks/pre-commit.sample": "01b1688f97f94776baae85d77b06048b",
-".git/hooks/pre-push.sample": "3c5989301dd4b949dfa1f43738a22819",
-".git/hooks/pre-rebase.sample": "56e45f2bcbc8226d2b4200f7c46371bf",
-".git/hooks/pre-receive.sample": "2ad18ec82c20af7b5926ed9cea6aeedd",
-".git/hooks/prepare-commit-msg.sample": "2b5c047bdb474555e1787db32b2d2fc5",
-".git/hooks/update.sample": "517f14b9239689dff8bda3022ebd9004",
-".git/index": "bcbaca8a85e721f41ab97e2c9f96d437",
-".git/info/exclude": "036208b4a1ab4a235d75c181e685e5a3",
-".git/logs/HEAD": "b81a81d521dde21c2ab9de3cdcc050b7",
-".git/logs/refs/heads/master": "b81a81d521dde21c2ab9de3cdcc050b7",
-".git/logs/refs/remotes/origin/master": "bd9d75429a8db24d97decefaeeb11a10",
-".git/objects/01/8a4166290f8a4dd0e214cf4c25f3631ebe5174": "eb730b6989802d426e069d3c59fab4de",
-".git/objects/02/9e6482d54b799fddef2a44599203d07854a2c1": "f2ea2e1a1dd1909b9454dbe7a3bcd1dd",
-".git/objects/03/eaddffb9c0e55fb7b5f9b378d9134d8d75dd37": "87850ce0a3dd72f458581004b58ac0d6",
-".git/objects/07/e02fefe3491f74cc493fc54a4730187e417a9f": "4c68d9e2f954d4774456c5b5bf0710d8",
-".git/objects/0f/816fb5068fb5d0dc1623718a94d7a34c5edfe4": "48392ce692d6328aef69a753fa305233",
-".git/objects/13/cd698afa86edb334bec59991cd113491a5a4f1": "01d69635e49925db17e7c32e26fc974f",
-".git/objects/15/9b15011009e1e691b0761e5627dc3f3aa452ad": "822c0ced8e90203ed87ff7e0082d7945",
-".git/objects/17/7c985a11ae381ae4bb2bfbc43fc06af4edc0fc": "59126989372adb454ab46c568316ff11",
-".git/objects/1a/f3cf41757b89ac0625774b62def66a913a2d24": "22d5c01500d7c4f0d834cf3fcb1f7287",
-".git/objects/1d/01be7ca2588507c4751d10c0464778c1f2f292": "845550a380d5e9a9c8d0f50d4fe12b40",
-".git/objects/20/5bb5db271c6d8de8399864c7bb9b917f638893": "c993b22f115d7f3ae6d5b7b212806539",
-".git/objects/27/e0dca7a72442b953e5a04742fa510b79ce3081": "ea4211728f16748f19e3e261895acf8b",
-".git/objects/2e/c0d19a9bb55c37ab1304ea2ef49ff92d9d36d0": "75ba8758a5fa14011527f195c7de7e60",
-".git/objects/3c/bbde0d8e17bf21444caa9c0fee75ee5462abd4": "66b6f3ce93189ebd301b77f518a76e8e",
-".git/objects/41/455db7e988cde182e88f660c76f2dd9141f0d1": "dac32ed62bed409d5b887057bf482ff2",
-".git/objects/46/e437facc06f996433daf95c6efd2a43a0526a1": "7df89b3555b9927d46634c1c667cacb9",
-".git/objects/49/7c1cdf1f1ffa38f46629286ce7e98913c8e095": "459cd6aadccea23d2e281693a0856e64",
-".git/objects/49/cf667db7f58e9a82ca4f2e630e7871ee0dea94": "23c5ea52c29852d039487ed786e667cb",
-".git/objects/4c/f5022e778491132ac112d0db5d24d2b3d22ce4": "0c055e3ecd1fd10f2b5815e4ca89680f",
-".git/objects/56/76f5b9f4ecd4ac6eb6235f2bc5450aecdbc4a9": "95662fa851c7acc407cac9e2849ff806",
-".git/objects/59/b4ea8b0cd837c7fd503ced1688e473437f07f9": "fa478994570118963d10457e27a87fcb",
-".git/objects/5e/201c9c965388da7c97cf8ed6cf999825f46c9e": "67e35042561d90c1b694dd933bb2c8e3",
-".git/objects/5f/60c48dc07bb90125d14711b3af0db2e19baaf4": "262649c279e744daef9b0f1a6f1b4566",
-".git/objects/6e/9853d63e9d2ec0c30fc58974910d4bd558b599": "dbba1e2ff456988825bf71cd2d03d0bb",
-".git/objects/77/1e865a21fd7e2ca9ede8bcfc1b535aabf24c68": "8ce906d5994a951456e78f0c87d73a3a",
-".git/objects/81/0337fcab9374ea7916511a5b9b59c1fe38c5fd": "cc99e87ef5a5ad26f76eb93e555d98fa",
-".git/objects/84/28f19d677ab178418a53f3eb1bc38ea8c57ccc": "9a83cfed79262faf12eab819a75da8f5",
-".git/objects/88/9b1d32b9616dcc544cf4453be12b6ac98834e3": "1d55e4d733d55333b27bb05d5ce4986b",
-".git/objects/88/cfd48dff1169879ba46840804b412fe02fefd6": "e42aaae6a4cbfbc9f6326f1fa9e3380c",
-".git/objects/8a/aa46ac1ae21512746f852a42ba87e4165dfdd1": "1d8820d345e38b30de033aa4b5a23e7b",
-".git/objects/8c/5f689a06005f9997d64a90c849a0866604998d": "e983f6aee613b8ec0d0491ab666baeac",
-".git/objects/8f/ca671c59ae68ce0fd65225c355a10b90191e91": "65142cfb85be5cd3912bf470efdc9fef",
-".git/objects/91/e6a127a04c442e5e14538c702e25c52d200852": "4d328aedca97f7f2a7a6bf8eb01dfa06",
-".git/objects/92/3746316a7d15faefc82db05524a5042472678f": "786a966ce989c7ce4c1c2b187aa77b59",
-".git/objects/92/8902e3d001b8979adee6d72a3ac677598a65dd": "6b8f1733caa3b98076b2602dcdd755c2",
-".git/objects/95/19e1d75e8e60fc461d42dceff7162076484747": "87166efde232eca9c4f1ad4118b6d046",
-".git/objects/a0/340d5dfedad502bf96eb5fefccbecad7a8ed20": "46ab09cd8bfd18c67837421150edbd03",
-".git/objects/a4/f790c6617e8b6361411a696b5c24d1b2c0423b": "dde87bde4046f76f72534456ae3f2570",
-".git/objects/a8/11d11b3bd165a760683385cd52019380c7c39f": "37b4a9cf257d997bb31294bb8064f6f4",
-".git/objects/b0/8ff784a3b1ff30b3d2bad56db5e0c71d036656": "af0958d5c807e586c226ba0045cc5b07",
-".git/objects/b7/49bfef07473333cf1dd31e9eed89862a5d52aa": "36b4020dca303986cad10924774fb5dc",
-".git/objects/bd/cc6cbd53ec4458a383bf1f23a400c86b7632d9": "2c56310f02165d3230279812c117ec5b",
-".git/objects/c6/82f8d6fa1a2eb47ce0437de1ec5a382a67e0c7": "c14f43457cc72310d19056d7dc26ce5b",
-".git/objects/d0/ee6d682fa66acd159666e53ad6d89c28449830": "e85342cf6e6008a2b0de07767fe45404",
-".git/objects/d6/8f72fbd0cd8eb8abda39e61409053784f5c878": "cc82e30887bda09ae04b88d5c597a28d",
-".git/objects/dd/56eabbf298449db91bfa8644c6fbb20b8e6dda": "3fa6bb294070401dbba0b01792b84ce0",
-".git/objects/e0/28fbcf3b6ee7ef2a980536cb522e0a31d676b2": "2fa9215bbe75f7c0066d0eb73d7b8048",
-".git/objects/e7/a20e09bf312f244a2c00ee8c610f3bae81da23": "920f85a17c1e53786b200771adde98df",
-".git/objects/f2/9cc897b6fdfc7388e4f8660e8d751922914dbe": "0f0e261838384283c6972fa4dc875815",
-".git/objects/f3/af7ee5948e7e5512bfdbffcfee1918ca232bb5": "9d951600013edb1bc5d9b66211c3e5d6",
-".git/objects/fc/565ec170b7fd55cbf422b8188a6f64eddda60e": "c1d5b622c8e63d1865785872c9d4a21d",
-".git/objects/fe/fc0b593c2424d5c4c0a2177b0c3c2722b644e6": "2eed56e7d6c24245298ff9f1d48b614c",
-".git/refs/heads/master": "3059c3e1136d78015f66ce8190522966",
-".git/refs/remotes/origin/master": "3059c3e1136d78015f66ce8190522966",
-"assets/AssetManifest.json": "d944adc7e2039b508d8ba93c2d3ea632",
-"assets/assets/assets/background.jpg": "d65670e1ca1e109de7f50d10eaa2a77b",
-"assets/assets/assets/me.jpg": "49ed3aa08548f3b098e4b44cfe264696",
-"assets/assets/background.jpg": "d65670e1ca1e109de7f50d10eaa2a77b",
-"assets/assets/me.jpg": "49ed3aa08548f3b098e4b44cfe264696",
-"assets/FontManifest.json": "01700ba55b08a6141f33e168c4a6c22f",
-"assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
-"assets/LICENSE": "8058b7983faffcaffe80d787e2ea4abf",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "115e937bb829a890521f72d2e664b632",
+  "assets/AssetManifest.json": "7f9dfec8467fc5360705e9c36e5f8aa1",
+"assets/FontManifest.json": "a939fad80bad9e87b1a3331c6d785484",
+"assets/fonts/FontsFree-Net-Proxima-Nova-Light.otf": "ac51ad8a36d5bab6da11d454bcd06561",
+"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/NOTICES": "386dd261e643ec87d811b44a1d9e885a",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "3e7e202eb7c836470bfb8ae6ba10d076",
-"/": "3e7e202eb7c836470bfb8ae6ba10d076",
-"main.dart.js": "4f93b277974d1b6f62db67856be36b70",
-"manifest.json": "0141d12830c8b3198598be94bae52abc"
+"index.html": "3344aa25c249ee0921b8a3569b00cc01",
+"/": "3344aa25c249ee0921b8a3569b00cc01",
+"main.dart.js": "831a5577ef76814af63d4bb4cdae13a5",
+"manifest.json": "cbb08e5d1be2d1ce01f5b8b227f7b1eb"
 };
 
-self.addEventListener('activate', function (event) {
-  event.waitUntil(
-    caches.keys().then(function (cacheName) {
-      return caches.delete(cacheName);
-    }).then(function (_) {
-      return caches.open(CACHE_NAME);
-    }).then(function (cache) {
-      return cache.addAll(Object.keys(RESOURCES));
+// The application shell files that are downloaded before a service worker can
+// start.
+const CORE = [
+  "/",
+"main.dart.js",
+"index.html",
+"assets/NOTICES",
+"assets/AssetManifest.json",
+"assets/FontManifest.json"];
+// During install, the TEMP cache is populated with the application shell files.
+self.addEventListener("install", (event) => {
+  return event.waitUntil(
+    caches.open(TEMP).then((cache) => {
+      return cache.addAll(
+        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
     })
   );
 });
 
-self.addEventListener('fetch', function (event) {
-  event.respondWith(
-    caches.match(event.request)
-      .then(function (response) {
-        if (response) {
-          return response;
+// During activate, the cache is populated with the temp files downloaded in
+// install. If this service worker is upgrading from one with a saved
+// MANIFEST, then use this to retain unchanged resource files.
+self.addEventListener("activate", function(event) {
+  return event.waitUntil(async function() {
+    try {
+      var contentCache = await caches.open(CACHE_NAME);
+      var tempCache = await caches.open(TEMP);
+      var manifestCache = await caches.open(MANIFEST);
+      var manifest = await manifestCache.match('manifest');
+      // When there is no prior manifest, clear the entire cache.
+      if (!manifest) {
+        await caches.delete(CACHE_NAME);
+        contentCache = await caches.open(CACHE_NAME);
+        for (var request of await tempCache.keys()) {
+          var response = await tempCache.match(request);
+          await contentCache.put(request, response);
         }
-        return fetch(event.request);
+        await caches.delete(TEMP);
+        // Save the manifest to make future upgrades efficient.
+        await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+        return;
+      }
+      var oldManifest = await manifest.json();
+      var origin = self.location.origin;
+      for (var request of await contentCache.keys()) {
+        var key = request.url.substring(origin.length + 1);
+        if (key == "") {
+          key = "/";
+        }
+        // If a resource from the old manifest is not in the new cache, or if
+        // the MD5 sum has changed, delete it. Otherwise the resource is left
+        // in the cache and can be reused by the new service worker.
+        if (!RESOURCES[key] || RESOURCES[key] != oldManifest[key]) {
+          await contentCache.delete(request);
+        }
+      }
+      // Populate the cache with the app shell TEMP files, potentially overwriting
+      // cache files preserved above.
+      for (var request of await tempCache.keys()) {
+        var response = await tempCache.match(request);
+        await contentCache.put(request, response);
+      }
+      await caches.delete(TEMP);
+      // Save the manifest to make future upgrades efficient.
+      await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+      return;
+    } catch (err) {
+      // On an unhandled exception the state of the cache cannot be guaranteed.
+      console.error('Failed to upgrade service worker: ' + err);
+      await caches.delete(CACHE_NAME);
+      await caches.delete(TEMP);
+      await caches.delete(MANIFEST);
+    }
+  }());
+});
+
+// The fetch handler redirects requests for RESOURCE files to the service
+// worker cache.
+self.addEventListener("fetch", (event) => {
+  var origin = self.location.origin;
+  var key = event.request.url.substring(origin.length + 1);
+  // Redirect URLs to the index.html
+  if (key.indexOf('?v=') != -1) {
+    key = key.split('?v=')[0];
+  }
+  if (event.request.url == origin || event.request.url.startsWith(origin + '/#') || key == '') {
+    key = '/';
+  }
+  // If the URL is not the RESOURCE list, skip the cache.
+  if (!RESOURCES[key]) {
+    return event.respondWith(fetch(event.request));
+  }
+  // If the URL is the index.html, perform an online-first request.
+  if (key == '/') {
+    return onlineFirst(event);
+  }
+  event.respondWith(caches.open(CACHE_NAME)
+    .then((cache) =>  {
+      return cache.match(event.request).then((response) => {
+        // Either respond with the cached resource, or perform a fetch and
+        // lazily populate the cache.
+        return response || fetch(event.request).then((response) => {
+          cache.put(event.request, response.clone());
+          return response;
+        });
       })
+    })
   );
 });
+
+self.addEventListener('message', (event) => {
+  // SkipWaiting can be used to immediately activate a waiting service worker.
+  // This will also require a page refresh triggered by the main worker.
+  if (event.data === 'skipWaiting') {
+    return self.skipWaiting();
+  }
+  if (event.message === 'downloadOffline') {
+    downloadOffline();
+  }
+});
+
+// Download offline will check the RESOURCES for all files not in the cache
+// and populate them.
+async function downloadOffline() {
+  var resources = [];
+  var contentCache = await caches.open(CACHE_NAME);
+  var currentContent = {};
+  for (var request of await contentCache.keys()) {
+    var key = request.url.substring(origin.length + 1);
+    if (key == "") {
+      key = "/";
+    }
+    currentContent[key] = true;
+  }
+  for (var resourceKey in Object.keys(RESOURCES)) {
+    if (!currentContent[resourceKey]) {
+      resources.push(resourceKey);
+    }
+  }
+  return contentCache.addAll(resources);
+}
+
+// Attempt to download the resource online before falling back to
+// the offline cache.
+function onlineFirst(event) {
+  return event.respondWith(
+    fetch(event.request).then((response) => {
+      return caches.open(CACHE_NAME).then((cache) => {
+        cache.put(event.request, response.clone());
+        return response;
+      });
+    }).catch((error) => {
+      return caches.open(CACHE_NAME).then((cache) => {
+        return cache.match(event.request).then((response) => {
+          if (response != null) {
+            return response;
+          }
+          throw error;
+        });
+      });
+    })
+  );
+}
