@@ -1,11 +1,11 @@
 {
-    "name": "ksenia_web",
-    "short_name": "ksenia_web",
+    "name": "ksenia_shikh_web",
+    "short_name": "ksenia_shikh_web",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter application.",
+    "description": "Ksenia Shikh Website",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
